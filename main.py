@@ -32,7 +32,7 @@ async def root():
     return {"message": "Hello World"}
 
 @app.post("/solution", tags=["solution"], status_code=201,response_model=str)
-async def process_orders(orders: List[Order] = Body(), criterion:str = Body                     
+async def process_orders(orders: List[Order] = Body(), criterion:str = Body):                     
     """
         sumary_line
     
