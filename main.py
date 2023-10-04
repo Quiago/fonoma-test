@@ -33,6 +33,12 @@ async def root():
 
 @app.post("/solution", tags=["solution"], status_code=201,response_model=str)
 async def process_orders(orders: List[Order] = Body(), criterion:str = Body()):
+        """sumary_line
+    
+    Keyword arguments:
+    orders -- A list of order(A Base Model to validate the fields of each item)
+    Return: return the computation of all the items that match with the criterion by the quantity of the items in the petition
+    """
     revenue = 0
     if criterion == "all":
         for order in orders:
@@ -44,5 +50,9 @@ async def process_orders(orders: List[Order] = Body(), criterion:str = Body()):
         if revenue == 0:
             return "The criterion you search is not in the list"
     return revenue
+
+if __name__ == "__main__":
+       import uvicorn
+       uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
