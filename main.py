@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 from typing import Optional, List
 
 app = FastAPI()
-app.title = "Fonoma Backend"
+app.title = "Fonoma Backend Exercise"
 app.description = "Solution for the Fonoma Backend exercise"
 app.version = "0.0.1"
 
